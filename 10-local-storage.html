@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10 localStorage</title>
+</head>
+<style>
+    body {
+        background-color: #000000;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='562' height='67.4' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%23222' stroke-width='8.2' %3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .jumbotron {
+        position: relative;
+        overflow: hidden;
+    }
+
+    video {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        left: 0;
+    }
+
+    header-text {
+        z-index: 2;
+        position: relative;
+
+    }
+      table, tr, tbody,td{
+        border: 1px solid black;
+      }
+</style>
+
+<body onload="check_data()">
+    <header>
+        <!-- ----------------------------------------------------------------------------------------- -->
+        <div class="jumbotron p-5 bg-dark text-white rounded">
+            <video src="https://cdn.pixabay.com/video/2024/02/24/201766-916357972_large.mp4" autoplay loop
+                muted></video>
+            <!-- <img src="https://64.media.tumblr.com/edaa5760ab7ada8328e29fc7178b6a36/tumblr_p8idbzV5bs1rmxrxvo1_1280.jpg" alt=""> -->
+            <div class="header-text">
+                <h1>Jumbotron Example</h1>
+                <p>Lorem ipsum...</p>
+            </div>
+
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Pakpoom</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled">Disabled</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+    </header>
+    <main>
+        <div class="card m-auto mt-5" style="width: 40rem;">
+            <img src="https://64.media.tumblr.com/edaa5760ab7ada8328e29fc7178b6a36/tumblr_p8idbzV5bs1rmxrxvo1_1280.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Student Data</h5>
+                <p class="card-text">
+                    <!-- <form> -->
+                        <div class="mb-3">
+                          <label class="form-label">Student Name</label>
+                          <input type="text" class="form-control" id="sname" name="sname" required>
+                          
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label">Phone Number</label>
+                          <input type="text" class="form-control" id="phone" name="phone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Department</label>
+                            <select class="form-select" id="dept" name="dept">
+                                <option selected>Please Select Item</option>
+                                <option value="แผนกช่างยนต์">แผนกช่างยนต์</option>
+                                <option value="แผนกคอมพิวเตอร์">แผนกคอมพิวเตอร์</option>
+                                <option value="แผนกเทคโนโลยีสาระสนเทศ">แผนกเทคโนโลยีสาระสนเทศ</option>
+                              </select>
+                        </div>
+                        
+                
+                        <button type="submit" class="btn btn-success w-25" onclick="click_submit()">Submit</button>
+                        <button type="reset" class="btn btn-danger w-25" onclick="click_reset()" >Reset</button>
+                      <!-- </form> -->
+                </p>
+
+                
+                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                <p id="output1"></p>
+                <p id="output2"></p>
+                <p id="output3"></p>
+                <p id="output4"></p>
+                <br>
+                <br>
+
+                <table id="table_student" style="width: 40rem;">
+                    <thead>
+                        <tr>
+                            <th>Sname</th>
+                            <th>Phone</th>
+                            <th>Dept</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+                <br><br><br><br><br><br><br><br><br><br><br><br>
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+        <script>
+            let sname = []
+            let phone = []
+            let dept  = []
+
+            function click_submit() {
+                if(document.getElementById('sname').value == ''|| 
+                   document.getElementById('phone').value == '' ||
+                   document.getElementById('dept').value == 'Please Select Item')
+                   {
+                    alert('กรุณาป้อนข้อมูลให้ครบถ้วน')
+                } else {
+            sname.push(document.getElementById('sname').value)
+            phone.push(document.getElementById('phone').value)
+            dept.push(document.getElementById('dept').value)
+
+            localStorage.setItem('sname', JSON.stringify(sname) )
+            localStorage.setItem('phone', JSON.stringify(phone) )
+            localStorage.setItem('dept',  JSON.stringify(dept) )
+
+            document.getElementById('sname').value = null
+            document.getElementById('phone').value = null
+            document.getElementById('dept').selectedIndex = 0
+
+            alert('บันทึกข้อมูลเรียบร้อยแล้ว')
+                }
+
+            }
+
+            function click_reset() {
+            document.getElementById('sname').value = null
+            document.getElementById('phone').value = null
+            document.getElementById('dept').selectedIndex = 0
+            }
+
+            function check_data() {
+                sname = JSON.parse(localStorage.getItem('sname'))
+                phone = JSON.parse(localStorage.getItem('phone'))
+                dept  = JSON.parse(localStorage.getItem('dept'))
+
+                if (sname == null) {sname= [] }
+                if (phone == null) {phone= [] }
+                if (dept == null) {dept= [] }
+
+                // document.getElementById('output1').innerHTML = sname
+                // document.getElementById('output2').innerHTML = phone
+                // document.getElementById('output3').innerHTML = dept
+
+                let table = document.querySelector('#table_student tbody')
+                let row = null
+                let column = null
+
+                for(let i = 0; i < sname.length; i++){
+                    // document.getElementById('output1').innerHTML += i + '<br>'
+                    row = document.createElement('tr')
+                    column = document.createElement('td')
+                    column.textContent = sname[i]
+                    row.appendChild(column)
+
+                    column = document.createElement('td')
+                    column.textContent = phone[i]
+                    row.appendChild(column)
+                    
+                    column = document.createElement('td')
+                    column.textContent = dept[i]
+                    row.appendChild(column)
+                    table.appendChild(row)
+
+
+                }
+            }
+            </script>
+    </body>
+
+</html>
